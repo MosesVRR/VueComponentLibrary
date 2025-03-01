@@ -1,37 +1,17 @@
-<script setup lang="ts">
-import { Button, LineChart } from './index';
-
-const handleButtonClick = () => {
-  alert('Button clicked!');
-};
-
-const chartData = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
-    {
-      label: 'My First dataset',
-      backgroundColor: '#f87979',
-      data: [40, 39, 10, 40, 39, 80, 40]
-    }
-  ]
-};
-
-const chartOptions = {
-  responsive: true,
-  maintainAspectRatio: false
-};
-</script>
-
 <template>
-  <Button label="Click Me" @click="handleButtonClick" />
-  <!-- Add other components to test them -->
-  <!-- <AnotherComponent /> -->
-  <div>
-    <LineChart :chart-data="chartData" :chart-options="chartOptions" />
-  </div>
+    <nav>
+      <router-link to="/button">Button</router-link>
+      <router-link to="/line-chart">Line Chart</router-link>
+    </nav>
+    <router-view></router-view>
 </template>
 
 <style scoped>
+nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
