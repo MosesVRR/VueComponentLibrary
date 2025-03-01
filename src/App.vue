@@ -1,9 +1,11 @@
 <template>
+  <div id="app">
     <nav>
       <router-link to="/button">Button</router-link>
       <router-link to="/line-chart">Line Chart</router-link>
     </nav>
     <router-view></router-view>
+  </div>
 </template>
 
 <style scoped>
