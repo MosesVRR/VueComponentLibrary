@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import Button from './components/Button.vue'
+import { Button } from './index'
+// Import other components as needed
+// import { AnotherComponent } from './index'
 
 const handleButtonClick = () => {
   alert('Button clicked!')
@@ -8,6 +10,8 @@ const handleButtonClick = () => {
 
 <template>
   <Button label="Click Me" @click="handleButtonClick" />
+  <!-- Add other components to test them -->
+  <!-- <AnotherComponent /> -->
 </template>
 
 <style scoped>
