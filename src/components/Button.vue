@@ -2,15 +2,23 @@
   <button @click="handleClick">{{ label }}</button>
 </template>
 
-<script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-const props = defineProps<{ label: string }>()
-const emit = defineEmits<{ (e: 'click'): void }>()
-
-const handleClick = () => {
-  emit('click')
-}
+export default defineComponent({
+  name: 'Button',
+  props: {
+    label: {
+      type: String,
+      required: true
+    }
+  },
+  methods: {
+    handleClick() {
+      this.$emit('click');
+    }
+  }
+});
 </script>
 
 <style scoped>
