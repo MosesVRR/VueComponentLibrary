@@ -1,17 +1,34 @@
 <script setup lang="ts">
-import { Button } from './index'
-// Import other components as needed
-// import { AnotherComponent } from './index'
+import { Button, LineChart } from './index';
 
 const handleButtonClick = () => {
-  alert('Button clicked!')
-}
+  alert('Button clicked!');
+};
+
+const chartData = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  datasets: [
+    {
+      label: 'My First dataset',
+      backgroundColor: '#f87979',
+      data: [40, 39, 10, 40, 39, 80, 40]
+    }
+  ]
+};
+
+const chartOptions = {
+  responsive: true,
+  maintainAspectRatio: false
+};
 </script>
 
 <template>
   <Button label="Click Me" @click="handleButtonClick" />
   <!-- Add other components to test them -->
   <!-- <AnotherComponent /> -->
+  <div>
+    <LineChart :chart-data="chartData" :chart-options="chartOptions" />
+  </div>
 </template>
 
 <style scoped>
